@@ -1,6 +1,7 @@
 #include "Classifier.h"
 #include <opencv2/ml/ml.hpp>
 #include "../utils/Loader.h"
+#include <opencv2/opencv.hpp>
 
 void Classifier::drawParkingPlaces(cv::Mat &scene, std::vector<Place> &parkingPlaces) {
 	int occupied = 0;
@@ -124,8 +125,6 @@ void Classifier::extractFeatures(Place &parkingPlace, std::vector<float> &featur
 			if (parkingPlace.x1 == 149 && parkingPlace.y1 == 699 && x >= 60 && x <= 110 && y >= 60 && y <= 110) {
 				blk = parkingPlace.frame(cv::Rect(60 - blkWidth, 60 - blkHeight, blkWidth, blkHeight));
 			}
-
-			//            features.emplace_back(featureSobel(blk, 70));
 			features.emplace_back(featureSobel(blk, 80));
 		}
 	}
@@ -361,7 +360,7 @@ void Classifier::recognize(std::string testFilesListPath, std::string resultsFil
 		// Show results
 		//        cv::Mat results = scene.clone();
 		//        drawParkingPlaces(results, places);
-		//        cv::namedWindow("Results", CV_WINDOW_NORMAL);
+		//       cv::namedWindow("Results", CV_WINDOW_NORMAL);
 		//        cv::imshow("Results", results);
 		//        cv::waitKey(0);
 

@@ -3,7 +3,6 @@
 
 #include <string>
 #include <vector>
-#include <opencv2/core/mat.hpp>
 #include "../core/Place.h"
 
 class Loader {

@@ -1,9 +1,10 @@
 #include "Loader.h"
-#include <opencv2/opencv.hpp>
 #include <fstream>
 #include <cassert>
 #include <iostream>
 #include <sstream>
+#include <opencv2/calib3d.hpp>
+#include <opencv2/video/tracking.hpp>
 
 void Loader::loadParkingPlaces(std::string fileName, cv::Mat &scene, std::vector<Place> &places) {
 	std::ifstream ifs;

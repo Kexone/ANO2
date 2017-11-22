@@ -1,10 +1,9 @@
 #ifndef VSB_ANO2_PARKING_CLASSIFIER_H
 #define VSB_ANO2_PARKING_CLASSIFIER_H
 
-#include <opencv2/opencv.hpp>
 #include <utility>
-#include "../core/Place.h"
 #include <opencv2/ml/ml.hpp>
+struct Place;
 
 class Classifier {
 private:
